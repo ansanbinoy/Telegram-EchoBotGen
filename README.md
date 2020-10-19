@@ -1,17 +1,24 @@
 # Telegram-EchoBotGen
+
 Telegram echo bot generator.
+
 ## Installation
+
 ```
 git clone https://github.com/ansanbinoy/Telegram-EchoBotGen.git
 cd Telegram-EchoBotGen/
 ```
-**Requirements**
-* [python requests documentation](https://2.python-requests.org/projects/3/)
+
+## Requirements
+
+* [python3 requests documentation](https://2.python-requests.org/projects/3/)
 * Install requests module
 ```
 sudo pip3 install requests
 ```
+
 ## Usage
+
 You can simply create a telegram echo bot.
 Its a useless bot.
 ```
