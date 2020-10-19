@@ -6,8 +6,8 @@ git clone https://github.com/ansanbinoy/Telegram-EchoBotGen.git
 cd Telegram-EchoBotGen/
 ```
 **Requirements**
-[python requests documentation](https://2.python-requests.org/projects/3/)
-Install requests module
+* [python requests documentation](https://2.python-requests.org/projects/3/)
+* Install requests module
 ```
 sudo pip3 install requests
 ```
