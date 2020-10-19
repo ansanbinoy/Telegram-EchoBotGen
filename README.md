@@ -17,7 +17,7 @@ Its a useless bot.
 ```
 python3 botgen.py --genarate=<token>
 ```
-Now your bots script and requirements file are saved in a directory "Your_Bot".
-You can deploy the bot using all file in heroku or etc.
+* Now your bots script and requirements file are saved in a directory "Your_Bot".
+* You can deploy the bot using all file in heroku or etc.
 ## Version
 **Current version 1.0**
