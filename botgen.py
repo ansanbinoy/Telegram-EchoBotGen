@@ -12,24 +12,24 @@ class BotGen:
 	def __init__(self):
 		banner()
 		parser = argparse.ArgumentParser()
-		parser.add_argument("--genarate", dest = 'tocken',
+		parser.add_argument("--genarate", dest = 'token',
 				help="Your bot token.")
 		self.args = parser.parse_args()
-		if not self.args.tocken:
+		if not self.args.token:
 			sys.exit(parser.print_help())
 
 		else:
-			self.tocken = self.args.tocken
+			self.token = self.args.token
 		self.requirements = """emoji
 python-telegram-bot
 """
-		self.check_tocken()
+		self.check_token()
 		self.build()
 
-	def check_tocken(self):
-		url = f"https://api.telegram.org/bot{self.tocken}/getUpdates"
+	def check_token(self):
+		url = f"https://api.telegram.org/bot{self.token}/getUpdates"
 		try:
-			print (f"{colour('B')}[+] {colour('G')}Checking API tocken is valid or not.{colour('NON')}")
+			print (f"{colour('B')}[+] {colour('G')}Checking API token is valid or not.{colour('NON')}")
 			time.sleep(0.5)
 			x = requests.get(url)
 
@@ -37,7 +37,7 @@ python-telegram-bot
 			sys.exit(f"{colour('B')}[!] {colour('R')}Something Wrong!.\n{colour('B')}[!] {colour('R')}Please check your internet connection!.{colour('NON')}")
 
 		if str(x) != '<Response [200]>':
-			sys.exit(f"{colour('B')}[!] {colour('R')}Please provide a valid API tocken!.{colour('NON')}")
+			sys.exit(f"{colour('B')}[!] {colour('R')}Please provide a valid API token!.{colour('NON')}")
 		else:
 			pass
 
@@ -65,8 +65,8 @@ python-telegram-bot
 				with open('Your_Bot/credential.json',"w+") as crds:
 					for i in crjs:
 						i = i.rstrip()
-						if "<tocken>" in i:
-							crds.write(i.replace("<tocken>", self.tocken) + os.linesep)
+						if "<token>" in i:
+							crds.write(i.replace("<token>", self.token) + os.linesep)
 						else:
 							crds.write(i + os.linesep)
 
