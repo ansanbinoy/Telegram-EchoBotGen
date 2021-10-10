@@ -7,8 +7,8 @@ os.system("clear")
 
 # Class for echo bot.
 class EchoBot:
-	def __init__(self, tocken):
-		self.tocken = tocken
+	def __init__(self, token):
+		self.token = token
 		self.smile = emojize(':smiling_face_with_smiling_eyes:')
 
 	def start(self, update, context): # Start command handling.
@@ -23,7 +23,7 @@ class EchoBot:
 		context.bot.send_message(uid,msg)
 
 	def run(self):
-		updater = Updater(self.tocken,use_context=True)
+		updater = Updater(self.token,use_context=True)
 		dp = updater.dispatcher
 		dp.add_handler(CommandHandler("start", self.start))
 		dp.add_handler(MessageHandler(Filters.text, self.message))
@@ -34,8 +34,8 @@ class EchoBot:
 def main():
 	jsf = open("credential.json")
 	crd = json.load(jsf)
-	tocken = crd["tocken"]
-	bot = EchoBot(tocken)
+	token = crd["token"]
+	bot = EchoBot(token)
 	bot.run()
 
 if __name__ == '__main__':
